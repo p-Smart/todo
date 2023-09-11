@@ -60,6 +60,9 @@ const ViewTask = () => {
             height: 'fit-content',
             '& p, input': {
                 fontSize: '.85rem'
+            },
+            ...!md && {
+                minWidth: '280px'
             }
         }}
         >

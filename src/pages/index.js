@@ -69,6 +69,11 @@ const HomePage = () => {
     }, [date, reloadTasks, currentPage] )
 
 
+    useEffect( () => {
+        setCurrentPage(1)
+    }, [date] )
+
+
 
 
 
