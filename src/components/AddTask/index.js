@@ -9,6 +9,7 @@ import Button from "src/components/Button"
 import { useState } from "react"
 import fetchData from "src/utils/fetchData"
 import { useBreakpoints } from "src/theme/mediaQuery"
+import { BsArrowLeft } from "react-icons/bs"
 
 const AddTask = () => {
 
@@ -52,7 +53,7 @@ const AddTask = () => {
     return (
         <Stack
         sx={{
-            width: !md ? 'max-content' : '100%',
+            width: !md ? 'max-content' : 'unset',
             boxShadow: '0 0 10px rgb(0,0,0,.225)',
             borderRadius: '8px',
             bgcolor: 'neutral.50',
@@ -76,12 +77,21 @@ const AddTask = () => {
             >
                 Add Task
             </Typography>
+            {
+            !md ?
             <GrClose 
             size={20}
             color={neutral[600]}
             style={{cursor: 'pointer'}}
             onClick={() => setCurrentSideView('calendar')}
+            /> :
+            <BsArrowLeft
+            size={30}
+            color={neutral[900]}
+            style={{cursor: 'pointer'}}
+            onClick={() => setCurrentSideView('calendar')}
             />
+            }
         </Stack>
 
         <TextField 

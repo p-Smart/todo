@@ -9,8 +9,11 @@ import Button from "src/components/Button"
 import { formatTime } from "src/utils/dateFormats"
 import { useEffect, useState } from "react"
 import fetchData from "src/utils/fetchData"
+import { useBreakpoints } from "src/theme/mediaQuery"
+import { BsArrowLeft } from "react-icons/bs"
 
 const EditTask = () => {
+    const {md} = useBreakpoints()
 
     const {date, setDate, toast} = useGlobalContext()
 
@@ -53,13 +56,12 @@ const EditTask = () => {
     return (
         <Stack
         sx={{
-            width: '100%',
+            width: !md ? 'max-content' : 'unset',
             boxShadow: '0 0 10px rgb(0,0,0,.225)',
             borderRadius: '8px',
             bgcolor: 'neutral.50',
             p: '20px',
             gap: '20px',
-            maxWidth: '300px',
             height: 'fit-content',
             '& p, input': {
                 fontSize: '.85rem'
@@ -78,12 +80,21 @@ const EditTask = () => {
             >
                 Edit Task
             </Typography>
+            {
+            !md ?
             <GrClose 
             size={20}
             color={neutral[600]}
             style={{cursor: 'pointer'}}
-            onClick={handleCloseEditTask}
+            onClick={() => setCurrentSideView('view-task')}
+            /> :
+            <BsArrowLeft
+            size={30}
+            color={neutral[900]}
+            style={{cursor: 'pointer'}}
+            onClick={() => setCurrentSideView('view-task')}
             />
+            }
         </Stack>
 
         <TextField

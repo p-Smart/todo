@@ -161,7 +161,7 @@ const BigCalendar = () => {
     return (
         <Stack
         sx={{
-            width: !md ? 'max-content' : '100%',
+            width: !md ? 'max-content' : 'unset',
             boxShadow: '0 0 10px rgb(0,0,0,.225)',
             borderRadius: '8px',
             bgcolor: 'neutral.50',

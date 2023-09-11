@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Button from "src/components/Button"
 import TopNav from "src/components/TopNav"
 import getGreeting from "src/utils/getGreeting"
@@ -14,6 +14,8 @@ import AddTask from "src/components/AddTask"
 import EditTask from "src/components/EditTask"
 import ViewTask from "src/components/ViewTask"
 import { useBreakpoints } from "src/theme/mediaQuery"
+import { BottomSheet } from 'react-spring-bottom-sheet'
+import 'react-spring-bottom-sheet/dist/style.css'
 
 
 const HomePage = () => {
@@ -27,6 +29,8 @@ const HomePage = () => {
     const [tasksLoading, setTasksLoading] = useState(false)
     const [currentSideView, setCurrentSideView] = useState('calendar')
     const [reloadTasks, setReloadTasks] = useState(false)
+    const [openBottomSheet, setOpenBottomSheet] = useState(false)
+    const bottomSheetRef = useRef(null)
 
     const initialTaskDetails = {
         title: '',
@@ -63,6 +67,24 @@ const HomePage = () => {
     useEffect( () => {
         handleFetchTasks()
     }, [date, reloadTasks, currentPage] )
+
+
+
+
+
+    useEffect( () => {
+        if(currentSideView!=='calendar'){
+            setOpenBottomSheet(true)
+        }
+        else{
+            setOpenBottomSheet(false)
+        }
+    }, [currentSideView] )
+
+    const handleBottomSheetDismiss = () => {
+        setOpenBottomSheet(false)
+        md && setCurrentSideView('calendar')
+    }
 
     return (
         <HomeContext.Provider
@@ -133,7 +155,7 @@ const HomePage = () => {
         squareCorners
         border
         onClick={() => setCurrentSideView('add-task')}
-        
+
         />
         }
 
@@ -186,6 +208,28 @@ const HomePage = () => {
         </Stack>
         </Stack>
         </Stack>
+
+        {
+        md &&
+        <BottomSheet 
+        open={openBottomSheet}
+        onDismiss={handleBottomSheetDismiss}
+        ref={bottomSheetRef}
+        >
+        {
+            currentSideView==='add-task' &&
+            <AddTask />
+        }
+        {
+            currentSideView==='edit-task' &&
+            <EditTask />
+        }
+        {
+            currentSideView==='view-task' &&
+            <ViewTask />
+        }
+        </BottomSheet>
+        }
         </HomeContext.Provider>
     )
 }
