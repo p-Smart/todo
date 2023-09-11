@@ -55,7 +55,7 @@ const DatePicker = ({forDate, forTime, date, setDate}) => {
         >
         {
             forDate &&
-            <FiCalendar 
+            <FiCalendar
             color={neutral[900]} 
             size={20}
             />
@@ -90,7 +90,7 @@ const DatePicker = ({forDate, forTime, date, setDate}) => {
         anchorEl={pickerRef.current}
         placement="bottom"
         sx={{
-            zIndex: 1,
+            zIndex: 999,
         }}
         onClick={(e) => e.stopPropagation()}
         >

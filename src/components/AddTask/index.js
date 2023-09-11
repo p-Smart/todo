@@ -56,7 +56,7 @@ const AddTask = () => {
             width: !md ? 'max-content' : 'unset',
             boxShadow: '0 0 10px rgb(0,0,0,.225)',
             borderRadius: '8px',
-            bgcolor: 'neutral.50',
+            bgcolor: md ? 'transparent' : 'neutral.50',
             p: '20px',
             gap: '8px',
             height: 'fit-content',

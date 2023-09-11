@@ -16,6 +16,7 @@ import ViewTask from "src/components/ViewTask"
 import { useBreakpoints } from "src/theme/mediaQuery"
 import { BottomSheet } from 'react-spring-bottom-sheet'
 import 'react-spring-bottom-sheet/dist/style.css'
+import { FiCalendar } from "react-icons/fi"
 
 
 const HomePage = () => {
@@ -160,7 +161,6 @@ const HomePage = () => {
         squareCorners
         border
         onClick={() => setCurrentSideView('add-task')}
-
         />
         }
 
@@ -184,6 +184,20 @@ const HomePage = () => {
         }}
         >
         <MiniCalendar />
+
+        {
+        md &&
+        <Button 
+        title='Choose from Calendar'
+        Icon={FiCalendar}
+        IconPlacement="left"
+        squareCorners
+        border
+        variant="outlined"
+        onClick={() => setCurrentSideView('mobile-calendar')}
+        sx={{alignSelf: 'flext-start', width: 'fit-content'}}
+        />
+        }
 
         <Tasks 
         tasks={tasks}
@@ -221,6 +235,10 @@ const HomePage = () => {
         onDismiss={handleBottomSheetDismiss}
         ref={bottomSheetRef}
         >
+        {
+            currentSideView==='mobile-calendar' &&
+            <BigCalendar />
+        }
         {
             currentSideView==='add-task' &&
             <AddTask />
