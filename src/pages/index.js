@@ -26,7 +26,7 @@ const HomePage = () => {
     const [totalTasks, setTotalTasks] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
     const [perPage, setPerPage] = useState(5)
-    const [tasksLoading, setTasksLoading] = useState(false)
+    const [tasksLoading, setTasksLoading] = useState(true)
     const [currentSideView, setCurrentSideView] = useState('calendar')
     const [reloadTasks, setReloadTasks] = useState(false)
     const [openBottomSheet, setOpenBottomSheet] = useState(false)
@@ -38,6 +38,7 @@ const HomePage = () => {
         completed: null,
     }
     const [taskDetails, setTaskDetails] = useState(initialTaskDetails)
+    console.log('Loading', tasksLoading, '-', 'Tasks Length', tasks.length)
 
     const handleFetchTasks = async () => {
         setTasksLoading(true)
