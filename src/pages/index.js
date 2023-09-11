@@ -38,7 +38,6 @@ const HomePage = () => {
         completed: null,
     }
     const [taskDetails, setTaskDetails] = useState(initialTaskDetails)
-    console.log('Loading', tasksLoading, '-', 'Tasks Length', tasks.length)
 
     const handleFetchTasks = async () => {
         setTasksLoading(true)
