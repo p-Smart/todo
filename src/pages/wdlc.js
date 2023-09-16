@@ -39,7 +39,7 @@ const WDLCPage = () => {
             IconColor: '#FF5733'
         },
         {
-            title: 'Development (Wordpress CMS)',
+            title: 'Development (WordPress CMS)',
             duration: 90,
             Icon: FaLaptopCode,
             IconColor: '#008080'
