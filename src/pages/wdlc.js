@@ -7,6 +7,7 @@ import {BiSolidBookContent, BiSolidLike} from 'react-icons/bi'
 import {MdDesignServices} from 'react-icons/md'
 import Phase from "src/components/WDLC/Phase"
 import { v4 as uuid } from 'uuid'
+import { BsFillRocketTakeoffFill } from "react-icons/bs"
 
 
 
@@ -15,33 +16,45 @@ const WDLCPage = () => {
     const phases = [
         {
             title: 'Research and Analysis',
+            duration: 7,
             Icon: FaSearch,
             IconColor: '#7DF9FF'
         },
         {
             title: 'Planning and Strategy',
+            duration: 7,
             Icon: TbBulbFilled,
             IconColor: '#FFD700'
         },
         {
-            title: 'Designing',
+            title: 'Designing \n UI/UX (Figma)',
+            duration: 14,
             Icon: MdDesignServices,
             IconColor: '#00A86B'
         },
         {
             title: 'Content Creation',
+            duration: 31,
             Icon: BiSolidBookContent,
             IconColor: '#FF5733'
         },
         {
-            title: 'Development',
+            title: 'Development (Wordpress CMS)',
+            duration: 90,
             Icon: FaLaptopCode,
             IconColor: '#008080'
         },
         {
             title: 'Testing and Quality Assurance',
+            duration: 7,
             Icon: BiSolidLike,
             IconColor: '#006400'
+        },
+        {
+            title: 'Deployment',
+            duration: 156,
+            Icon: BsFillRocketTakeoffFill,
+            IconColor: '#FFA500'
         },
     ]
 
@@ -68,12 +81,12 @@ const WDLCPage = () => {
                 <span
                 style={{color: neutral[50]}}
                 >
-                A Comprehensive Guide To The 7 Phases of 
+                A Comprehensive
                 </span>
                 <span 
                 style={{display: 'block', color: primary.main}}
                 >
-                Web Development Life Cycle
+                ARSC Web Development Phases
                 </span>
             </Typography>
 
@@ -81,7 +94,7 @@ const WDLCPage = () => {
             direction='row'
             >
             {
-            phases.map( ({title, Icon, IconColor}, k) => (
+            phases.map( ({title, Icon, IconColor, duration}, k) => (
                 <Phase
                 key={uuid()}
                 startPhase={k===0}
@@ -89,6 +102,7 @@ const WDLCPage = () => {
                 topTitle={!(k%2)}
                 bottomTitle={k%2 !== 0}
                 title={title}
+                duration={duration}
                 Icon={Icon}
                 IconColor={IconColor}
                 />

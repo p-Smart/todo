@@ -1,6 +1,8 @@
 import { Stack, Typography } from "@mui/material"
 
 
+const formatTitleWithNewlines = (text) => text.split('\n').map((line, index) => <span key={index}>{line}{index < text.split('\n').length - 1 && <br />}</span>)
+
 
 const DottedLine = ({topStart, bottomStart, title}) => {
 
@@ -68,7 +70,7 @@ const Circle = ({title, textLeft, textRight}) => {
             ...textLeft && {right: '20px', textAlign: 'right'}
         }}
         >
-            {title}
+            {formatTitleWithNewlines(title)}
         </Typography>
         </Stack>
     )
