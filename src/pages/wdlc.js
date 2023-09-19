@@ -22,37 +22,37 @@ const WDLCPage = () => {
         },
         {
             title: 'Planning and Strategy',
-            duration: 7,
+            duration: 10,
             Icon: TbBulbFilled,
             IconColor: '#FFD700'
         },
         {
             title: 'Designing \n UI/UX (Figma)',
-            duration: 14,
+            duration: 20,
             Icon: MdDesignServices,
             IconColor: '#00A86B'
         },
         {
             title: 'Content Creation',
-            duration: 31,
+            duration: 30,
             Icon: BiSolidBookContent,
             IconColor: '#FF5733'
         },
         {
             title: 'Development (WordPress CMS)',
-            duration: 90,
+            duration: 60,
             Icon: FaLaptopCode,
             IconColor: '#008080'
         },
         {
             title: 'Testing and Quality Assurance',
-            duration: 7,
+            duration: 14,
             Icon: BiSolidLike,
             IconColor: '#006400'
         },
         {
             title: 'Deployment',
-            duration: 156,
+            duration: 141,
             Icon: BsFillRocketTakeoffFill,
             IconColor: '#FFA500'
         },
