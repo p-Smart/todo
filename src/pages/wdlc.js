@@ -52,7 +52,7 @@ const WDLCPage = () => {
         },
         {
             title: 'Deployment',
-            duration: 141,
+            duration: '141 Days (4Months 21Days)',
             Icon: BsFillRocketTakeoffFill,
             IconColor: '#FFA500'
         },

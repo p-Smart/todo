@@ -20,7 +20,6 @@ const Phase = ({title, Icon, IconColor, topTitle, bottomTitle, startPhase, endPh
             sx={{
                 width: '70px',
                 height: '70px',
-                borderRadius: '50%',
                 border: '4px solid',
                 borderColor: 'primary.main',
                 alignItems: 'center',
@@ -79,7 +78,7 @@ const HozBar = ({start, end, rightBar, duration}) => {
                 left: '50%'
             }}
             >
-                {`${end ? 'Total: ' : ''}${duration} Days`}
+                {!end ? `${duration} Days` : duration}
             </Typography>
             }
         </Stack>
