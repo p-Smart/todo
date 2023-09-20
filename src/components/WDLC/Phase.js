@@ -21,6 +21,7 @@ const Phase = ({title, Icon, IconColor, topTitle, bottomTitle, startPhase, endPh
                 width: '70px',
                 height: '70px',
                 border: '4px solid',
+                borderRadius: '50%',
                 borderColor: 'primary.main',
                 alignItems: 'center',
                 justifyContent: 'center',
