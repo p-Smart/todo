@@ -56,7 +56,7 @@ const HozBar = ({start, end, rightBar, duration}) => {
     return (
         <Stack 
         sx={{
-            width: '50px',
+            width: '40px',
             height: '12px',
             bgcolor: 'primary.main',
             ...start && {borderRadius: '10px 0 0 10px'},
