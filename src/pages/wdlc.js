@@ -15,13 +15,13 @@ const WDLCPage = () => {
 
     const phases = [
         {
-            title: 'Research and Analysis',
+            title: 'Research and\nAnalysis',
             duration: 7,
             Icon: FaSearch,
             IconColor: '#7DF9FF'
         },
         {
-            title: 'Planning and Strategy',
+            title: 'Planning and\nStrategy',
             duration: 10,
             Icon: TbBulbFilled,
             IconColor: '#FFD700'
@@ -39,13 +39,13 @@ const WDLCPage = () => {
             IconColor: '#FF5733'
         },
         {
-            title: 'Development (Frontend & Backend)',
+            title: 'Development\n(Frontend & Backend)',
             duration: 60,
             Icon: FaLaptopCode,
             IconColor: '#008080'
         },
         {
-            title: 'Testing and Quality Assurance',
+            title: 'Testing and Quality\nAssurance',
             duration: 14,
             Icon: BiSolidLike,
             IconColor: '#006400'

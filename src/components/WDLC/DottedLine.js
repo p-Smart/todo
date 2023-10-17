@@ -67,7 +67,8 @@ const Circle = ({title, textLeft, textRight}) => {
             width: '150px',
             color: 'neutral.50',
             ...textRight && {left: '20px'},
-            ...textLeft && {right: '20px', textAlign: 'right'}
+            ...textLeft && {right: '20px', textAlign: 'right'},
+            whiteSpace: 'nowrap'
         }}
         >
             {formatTitleWithNewlines(title)}
