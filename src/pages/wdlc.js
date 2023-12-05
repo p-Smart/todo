@@ -86,7 +86,7 @@ const WDLCPage = () => {
                 <span 
                 style={{display: 'block', color: primary.main}}
                 >
-                ARSC Web Development Phases
+                University of Ibadan Research Data Repository
                 </span>
             </Typography>
 
